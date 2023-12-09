@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://chhqrqdq3n3c1"]
+
+[ext_resource type="Texture2D" uid="uid://uo8nqqns72nq" path="res://Texture/Герой.png" id="1_g1qyp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr7k4"]
+size = Vector2(16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_au6dh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g1qyp")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qr7k4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_au6dh")
+animation = &"Idle"
